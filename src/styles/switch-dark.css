@@ -1,0 +1,170 @@
+html , body {
+    background-color: #2d2d2d;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter var', sans-serif;
+    font-size: x-large;
+}
+div {
+    background-color: #666666;
+    border-radius: 4px;
+}
+.hamburguer_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    margin: 48px;
+    border-radius: 14px;
+    transition: linear 0.1s;
+    animation-duration: 1s;
+}
+.hamburguer_icon {
+    width: 60px;
+    height: 55px;
+    scale: 1.32;
+}
+.hamburguer_button:hover {
+    scale: 1.1;
+}
+.filter_bar {
+    position: absolute;
+    left: 50%;
+    bottom: 56px;
+    transform: translate(-50%, -50%);
+    border-radius: 39px;
+    width: 440px;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 42px;
+}
+.filter_all_button {
+    width: 48px;
+    height: 48px;
+    background-color: #96D467;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter_games_button {
+    width: 48px;
+    height: 48px;
+    background-color: #6198C4;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter_books_button {
+    width: 48px;
+    height: 48px;
+    background-color: #E4D168;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter_tv_button {
+    width: 48px;
+    height: 48px;
+    background-color: #CE4545;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter_icon {
+    width: 40px;
+    height: 40px;
+}
+#add-midia-header {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    position: absolute;
+    top: 56px;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    width: 432px;
+    background-color: #666666;
+    border-radius: 24px;
+    margin-left: 408px;
+}
+.add-new-field {
+    margin-left: 8.96%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 32.01%;
+    gap: 50px;
+    color: #383838;
+}
+.add-new-element {
+    background-color: #666666;
+    width: 100%;
+    height: 72px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    padding-left: 10px;
+    overflow: hidden;
+    transition: ease-in;
+    transition-duration: 100ms;
+}
+.add-new-element:hover , .add-new-image:hover {
+    outline: 2px solid #00FEC9;
+}
+.add-new-image {
+    border-radius: 48px;
+    position: absolute;
+    left: 64%;
+    width: 26.46%;
+    height: 496px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/camera.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    transition: ease-in;
+    transition-duration: 100ms;
+}
+#add-image {
+    background-color: #2d2d2d;
+    border-radius: 40px;
+    margin-top: 80%;
+    width: 60%;
+    height: 10%;
+    content-visibility: hidden;
+}
+#texto-add-imagem {
+    color: #666666;
+    position: absolute;
+    margin-top: 85%;
+    pointer-events: none;
+}
+#nome , #url , #tags {
+    background-color: #666666;
+    border: none;
+    outline: none;
+    font-size: xx-large;
+    width: 640px;
+    height: 56px;
+}
+input[type="radio"] {
+    display: grid;
+    place-content: center;
+    accent-color: #00FEC9;
+    margin-left: 20px;
+    border-radius: 0px;
+}
+.radio-text {
+    font-size: 70%;
+}
