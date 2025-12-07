@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/switch-dark.css">
+    <!-- esses dois negocio serve pra fonte 'inter' que eu uso funcionar-->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>Adicionar</title>
+</head>
+<body>
+    <div class="hamburguer_button">
+        <img class="hamburguer_icon" src="../assets/hamburguer.png">
+    </div>
+    <header id="add-midia-header">
+        <h1>Adicionar Midia</h1>
+    </header>
+    <fieldset class="add-new-field">
+        <div class="add-new-image">
+        <input id="add-image" type="file" accept="image/*" placeholder="hi">
+        <p id="texto-add-imagem">Selecionar imagem</p>
+        </div>
+
+        <div class="add-new-element">
+        <Label for="nome">Nome: </Label>
+        <input id=nome type="text">
+        </div>
+
+        <div class="add-new-element">
+        <label for="url">URL:</label>
+        <input id="url" type="url" placeholder="Cole o URL do site aqui">
+        </div>
+
+        <div class="add-new-element">
+        <label>Tipo: </label>
+        <input type="radio" id="tipo" name="tipo">
+        <p class="radio-text">Jogo</p>
+        <input type="radio" id="tipo" name="tipo">
+        <p class="radio-text">Livro</p>
+        <input type="radio" id="tipo" name="tipo">
+        <p class="radio-text">Série</p>
+        <input type="radio" id="tipo" name="tipo">
+        <p class="radio-text">Outros</p>
+        </div>
+
+        <!-- A fazer :
+        Fazer com que sua search possa ser adicionada a uma lista de tags que ai sim vão ser as finais -->
+        <div class="add-new-element">
+        <label>Tags: </label>
+        <input id="tags" type="search" list="tags-list">
+        </div>
+    </fieldset>
+
+
+
+</body>
+</html>
+<datalist id="tags-list">
+    <option>Ação</option>
+    <option>Fps</option>
+    <option>Plataforma</option>
+    <option>2D</option>
+    <option>3D</option>
+    <option>Roguelike</option>
+    <option>Suspense</option>
+    <option>Puzzle</option>
+    <option>Cardgame</option>
+    <option>Ritmo</option>
+    <option>Shounen</option>
+    <option>Shojo</option>
+    <option>Isekai</option>
+    <option>Seinen</option>
+    <option>Mecha</option>
+    <option>Aventura</option>
+    <option>drama</option>
+    <option>Comedia</option>
+    <option>terror</option>
+    <option>Adulto</option>
+    <option>Ficção Cientifica</option>
+    <option>Documentario</option>
+</datalist>
