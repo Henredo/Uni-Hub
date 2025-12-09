@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U-Hub</title>
-    <link rel="stylesheet" href="../styles/switch-dark.css">
+    <link id="tema-css" rel="stylesheet" href="../styles/switch-dark.css">
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>UniHub - Página Principal</title>
 </head>
+
 <body>
-    <div class="hamburguer_button">
-        <img class="hamburguer_icon" src="../assets/hamburguer.png">
-    </div>
-    <p>Note agora como o individuo é brutal</p>
 
-    <div class="recents">
-    </div>
+    <header>
+        <button id="menu" class="hamburguer_button">
+            <img class="hamburguer_icon" src="../assets/hamburguer.png">
+        </button> 
 
-    <div class="filter_bar">
-        <div class="filter_all_button">
-            <img src="../assets/squares.png" class="filter_icon">
+        <div class="barra-pesquisa">
+            <img src="../assets/lupa.png" id="lupa-icon">
+            <input id="campo-pesquisa" type="text" placeholder="Procurar" class="input-pesquisa">
         </div>
-        <div class="filter_games_button">
-            <img src="../assets/gamepad.png" class="filter_icon">
-        </div>
-        <div class="filter_books_button">
-            <img src="../assets/books.png" class="filter_icon">
-        </div>
-        <div class="filter_tv_button">
-            <img src="../assets/tv.png" class="filter_icon" style="width: 64px;height: 48px;">
-        </div>
-    </div>
+    </header>
+
+    <aside id="barra-lado" class="hamburguer-menu">
+        <ul>
+            <li><button id="menu-inicio" class="h-menu-button">Início</button></li>
+            <li><button id="menu-add" class="h-menu-button">Adicionar</button></li>
+            <li><button id="menu-custom" class="h-menu-button">Customização</button></li>
+        </ul>
+    </aside>
+
+    <main>
+
+        <section id="recente">
+            <div class="midias-scroller" id="midias-scroller"></div>
+        </section>
+
+        <section id="filtro">
+            <div class="filter_bar">    
+                <button class="filter_all_button"><img src="../assets/squares.png" class="filter-icon"></button>
+                <button class="filter_games_button"><img src="../assets/gamepad.png" class="filter-icon"></button>
+                <button class="filter_books_button"><img src="../assets/books.png" class="filter-icon"></button>
+                <button class="filter_tv_button"><img src="../assets/tv.png" class="filter-icon" style="width: 64px;height: 48px;"></button>
+            </div>
+        </section>
+
+    </main> 
+
+    <script src="../script/index.js"></script>
 </body>
 </html>

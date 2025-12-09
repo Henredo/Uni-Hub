@@ -10,9 +10,20 @@
     <title>Adicionar</title>
 </head>
 <body>
-    <div class="hamburguer_button">
-        <img class="hamburguer_icon" src="../assets/hamburguer.png">
-    </div>
+    <header>
+        <button id="menu" class="hamburguer_button">
+            <img class="hamburguer_icon" src="../assets/hamburguer.png">
+        </button> 
+    </header>
+
+    <aside id="barra-lado" class="hamburguer-menu">
+        <ul>
+            <li><button id="menu-inicio" class="h-menu-button">Início</button></li>
+            <li><button id="menu-add" class="h-menu-button">Adicionar</button></li>
+            <li><button id="menu-custom" class="h-menu-button">Customização</button></li>
+        </ul>
+    </aside>
+    
     <header id="add-midia-header">
         <h1>Adicionar Midia</h1>
     </header>
@@ -52,8 +63,10 @@
         </div>
     </fieldset>
 
+    <button id="salvar" class="btn-salvar">SALVAR</button>
 
 
+    <script src="../script/add.js"></script>
 </body>
 </html>
 <datalist id="tags-list">
