@@ -5,10 +5,12 @@ html , body {
     font-family: 'Inter var', sans-serif;
     font-size: x-large;
 }
+
 div {
     background-color: #666666;
     border-radius: 4px;
 }
+
 .hamburguer_button {
     background-color: #666666;
     border: none;
@@ -20,31 +22,38 @@ div {
     margin: 48px;
     border-radius: 14px;
     transition: linear 0.1s;
+    position: relative;
+    z-index: 1001;
 }
+
 .hamburguer_icon {
     width: 60px;
     height: 55px;
     scale: 1.32;
 }
+
 .hamburguer_button:hover {
     scale: 1.1;
 }
+
 .hamburguer_button:active {
     transition-duration: 100ms;
     scale: 0.9;
 }
+
 .hamburguer-menu {
     position: absolute;
     background-color: #666666;
     width: 120px;
     margin-left: 48px;
-    top: 152px;
     border-radius: 14px;
     top: -2000px;
 }
+
 .h-menu-button {
     margin-top: 32px;
 }
+
 .barra-pesquisa {
     background-color: #666666;
     border: none;
@@ -60,6 +69,7 @@ div {
     padding-left: 1%;
     overflow: hidden;
 }
+
 .input-pesquisa {
     margin-left: 10px;
     background-color: #666;
@@ -69,20 +79,23 @@ div {
     width: 100%;
     height: 95%;
 }
+
 .input-pesquisa::placeholder {
     color: #383838;
 }
+
 #lupa-icon {
     width: 3.9%;
     height: 50%;
     scale: 1.32;
     opacity: 43%;
 }
-.filter_bar {
+
+.barra-filtro {
     position: absolute;
     left: 50%;
     bottom: 56px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     border-radius: 39px;
     width: 440px;
     height: 64px;
@@ -91,81 +104,77 @@ div {
     justify-content: center;
     align-items: center;
     column-gap: 42px;
+    background: none;
 }
-.filter_all_button {
-    width: 48px;
-    height: 48px;
-    background-color: #96D467;
-    border-radius: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: hidden;
-}
-.filter_games_button {
-    width: 48px;
-    height: 48px;
-    background-color: #6198C4;
-    border-radius: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: hidden;
-}
-.filter_books_button {
-    width: 48px;
-    height: 48px;
-    background-color: #E4D168;
-    border-radius: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: hidden;
-}
+
+.filter_all_button,
+.filter_games_button,
+.filter_books_button,
 .filter_tv_button {
     width: 48px;
     height: 48px;
-    background-color: #CE4545;
     border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: hidden;
 }
+
+.filter_all_button { background-color: #96D467; }
+.filter_games_button { background-color: #6198C4; }
+.filter_books_button { background-color: #E4D168; }
+.filter_tv_button { background-color: #CE4545; }
+
 .filter-icon {
     width: 40px;
     height: 40px;
 }
-.filter_all_button:hover , .filter_games_button:hover , .filter_books_button:hover , .filter_tv_button:hover {
+
+.filter_all_button:hover,
+.filter_games_button:hover,
+.filter_books_button:hover,
+.filter_tv_button:hover {
     transition: all linear 100ms;
     scale: 1.1;
 }
-.filter_all_button:active , .filter_games_button:active , .filter_books_button:active , .filter_tv_button:active {
+
+.filter_all_button:active,
+.filter_games_button:active,
+.filter_books_button:active,
+.filter_tv_button:active {
     transition: all linear 100ms;
-    transition-duration: 100ms;
     scale: 1;
 }
-.midias-scroller {
-    position: absolute;
-    bottom: 27%;
-    display: grid;
-    grid-auto-flow: column;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    grid-gap: 7.68%;
-    height: 37.13%;
-    width: 100%;
-    background: none;
 
+
+#recente {
+    margin-top: 20px;
 }
-.midias-scroller::-webkit-scrollbar {
-  display: none; /*esconde barra de scoll no chrome*/
+
+.midias-scroller {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 10px;
 }
+
 .midias-container {
-    background-color: #666666;
-    height: 100%;
-    width: 271px;
+    min-width: 150px;
+    background: #222;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
 }
+
+.horizontal-ativo {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.horizontal-card {
+    width: 200px;
+}
+
 
 #add-midia-header {
     display: flex;
@@ -180,6 +189,7 @@ div {
     border-radius: 24px;
     margin-left: 408px;
 }
+
 .add-new-field {
     margin-left: 8.96%;
     border: none;
@@ -189,6 +199,7 @@ div {
     gap: 50px;
     color: #383838;
 }
+
 .add-new-element {
     background-color: #666666;
     width: 100%;
@@ -199,12 +210,14 @@ div {
     border-radius: 40px;
     padding-left: 10px;
     overflow: hidden;
-    transition: ease-in;
-    transition-duration: 100ms;
+    transition: ease-in 100ms;
 }
-.add-new-element:hover , .add-new-image:hover {
+
+.add-new-element:hover,
+.add-new-image:hover {
     outline: 2px solid #00FEC9;
 }
+
 .add-new-image {
     border-radius: 48px;
     position: absolute;
@@ -218,9 +231,9 @@ div {
     background-repeat: no-repeat;
     background-size: 70%;
     background-position: center;
-    transition: ease-in;
-    transition-duration: 100ms;
+    transition: ease-in 100ms;
 }
+
 #add-image {
     background-color: #2d2d2d;
     border-radius: 40px;
@@ -229,12 +242,14 @@ div {
     height: 10%;
     content-visibility: hidden;
 }
+
 #texto-add-imagem {
     color: #666666;
     position: absolute;
     margin-top: 85%;
     pointer-events: none;
 }
+
 #nome , #url , #tags {
     background-color: #666666;
     border: none;
@@ -243,18 +258,19 @@ div {
     width: 640px;
     height: 56px;
 }
+
 input[type="radio"] {
-    display: grid;
-    place-content: center;
     accent-color: #00FEC9;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
     margin-left: 20px;
-    border-radius: 0px;
 }
+
 .radio-text {
     font-size: 70%;
 }
 
-/* barra lateral */
 #barra-lado {
     position: fixed;
     top: 0;
@@ -264,13 +280,9 @@ input[type="radio"] {
     background: #111;
     z-index: 999;
     padding-top: 150px;
+    transition: left 0.3s ease;
 }
 
-.hamburguer-menu.aberto, #barra-lado.aberto {
-  left: 0;
-}
-
-.hamburguer_button {
-    position: relative;
-    z-index: 1001; /* botão ficar emcima da barra */
+#barra-lado.aberto {
+    left: 0;
 }

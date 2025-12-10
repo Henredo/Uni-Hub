@@ -1,6 +1,6 @@
 import { adicionarMidia } from "./storage.js";
 
-// MENU LATERAL
+// MENU
 const btnMenu = document.querySelector("#menu");
 const barraLado = document.querySelector("#barra-lado");
 
@@ -10,7 +10,6 @@ if (btnMenu && barraLado) {
     });
 }
 
-// BOTÕES MENU
 document.querySelector("#menu-inicio").addEventListener("click", () => {
     window.location.href = "index.html";
 });
@@ -19,16 +18,15 @@ document.querySelector("#menu-add").addEventListener("click", () => {
     window.location.href = "tela-add.html";
 });
 
-// FORMULÁRIO
+// FORM
 document.addEventListener("DOMContentLoaded", () => {
 
     const inputImage = document.getElementById("add-image");
     const textImage = document.getElementById("texto-add-imagem");
     const btnSalvar = document.getElementById("salvar");
 
-    let imagemBase64 = "";
+    let imagemBase64 = "../assets/default.png"; // imagem padrão
 
-    // Carregar imagem (Base64)
     inputImage.addEventListener("change", () => {
         const file = inputImage.files[0];
         if (!file) return;
@@ -49,28 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const url = document.getElementById("url").value.trim();
         const tag = document.getElementById("tags").value.trim();
 
-        const radios = document.querySelectorAll("input[name='tipo']");
-        let tipoSelecionado = "";
-
-        radios.forEach(r => {
-            if (r.checked) tipoSelecionado = r.nextElementSibling.innerText;
-        });
+        const tipoElemento = document.querySelector("input[name='tipo']:checked");
+        const tipo = tipoElemento ? tipoElemento.value : "other";
 
         const novaMidia = {
             id: Date.now().toString(),
-            nome: nome,
-            url: url,
-            tipo: tipoSelecionado,
-            tag: tag,
-            image: imagemBase64
+            nome,
+            url,
+            image: imagemBase64,
+            tipo,
+            tag
         };
 
-        const resultado = adicionarMidia(novaMidia);
-        alert(resultado.message);
-
-        if (resultado.success) {
-            window.location.href = "index.html";
-        }
+        adicionarMidia(novaMidia);
+        window.location.href = "index.html";
     });
 
 });

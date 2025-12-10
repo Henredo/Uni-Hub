@@ -1,44 +1,64 @@
 import { carregarMidias, removerMidia } from "./storage.js";
 
-// ========== MENU ==========
+// MENU LATERAL
 const btnMenu = document.querySelector("#menu");
 const barraLado = document.querySelector("#barra-lado");
 
-if (btnMenu && barraLado) {
-    btnMenu.addEventListener("click", () => {
-        barraLado.classList.toggle("aberto");
-    });
-}
+btnMenu?.addEventListener("click", () => {
+    barraLado.classList.toggle("aberto");
+});
 
-// ========== BOTÕES DO MENU ==========
-document.querySelector("#menu-add").addEventListener("click", () => {
+// LINKS DO MENU
+document.querySelector("#menu-add")?.addEventListener("click", () => {
     window.location.href = "tela-add.html";
 });
 
-document.querySelector("#menu-inicio").addEventListener("click", () => {
+document.querySelector("#menu-inicio")?.addEventListener("click", () => {
     window.location.href = "index.html";
 });
 
-// ========== LISTAGEM ==========
-const container = document.querySelector(".midia-container");
+// ÁREA ÚNICA DE CARDS
+const container = document.querySelector("#midias-scroller");
 
+let modoHorizontal = false;
+
+// BOTÃO PARA TROCAR MODO
+document.querySelector(".filter_all_button")?.addEventListener("click", () => {
+    modoHorizontal = !modoHorizontal;
+
+    if (modoHorizontal) {
+        container.classList.add("horizontal-ativo");
+    } else {
+        container.classList.remove("horizontal-ativo");
+    }
+
+    carregarCards();
+});
+
+// CRIAÇÃO DOS CARDS
 function criarCard(midia) {
     const card = document.createElement("div");
-    card.classList.add("midia-card");
+    card.classList.add("midias-container");
+
+    if (modoHorizontal) card.classList.add("horizontal-card");
 
     card.innerHTML = `
-        <img src="${midia.image}" class="midia-img">
+        <img src="${midia.image}" class="midia-img" data-url="${midia.url}">
         <h3 class="midia-nome">${midia.nome}</h3>
-        <p class="midia-tag">Tag: ${midia.tag}</p>
 
         <button class="btn-remover" data-id="${midia.id}">
             Remover
         </button>
     `;
 
+    card.querySelector(".midia-img").addEventListener("click", () => {
+        if (midia.url) window.open(midia.url, "_blank");
+    });
+
     return card;
 }
 
+// RENDERIZAÇÃO
 function carregarCards() {
     const midias = carregarMidias();
     container.innerHTML = "";
@@ -49,11 +69,9 @@ function carregarCards() {
     }
 
     midias.forEach(midia => {
-        const card = criarCard(midia);
-        container.appendChild(card);
+        container.appendChild(criarCard(midia));
     });
 
-    // Eventos dos botões de remover
     document.querySelectorAll(".btn-remover").forEach(btn => {
         btn.addEventListener("click", () => {
             const id = btn.getAttribute("data-id");
