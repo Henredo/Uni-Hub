@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/switch-dark.css">
-    <!-- esses dois negocio serve pra fonte 'inter' que eu uso funcionar-->
+    <link id="tema-css" rel="stylesheet" href="../styles/switch-dark.css">
+
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <title>UniHub - Página Principal</title>
@@ -13,50 +13,53 @@
 <body>
 
     <header>
-        <button id="menu" class="hamburguer_button"><img class="hamburguer_icon" src="../assets/hamburguer.png"></button> 
-
+        <button id="menu" class="hamburguer_button">
+            <img class="hamburguer_icon" src="../assets/hamburguer.png">
+        </button> 
         <div class="barra-pesquisa">
             <img src="../assets/lupa.png" id="lupa-icon">
-        <input type="text" placeholder="Procurar" class="input-pesquisa" >
+            <input id="campo-pesquisa" type="text" placeholder="Procurar" class="input-pesquisa">
         </div>
     </header>
-
+    
+    <div class="esconde-animação-h">‎ </div>
     <aside id="barra-lado" class="hamburguer-menu">
-        <nav>
-            <ul>
-                <li><button class="h-menu-button">Início</button></li>
-                <li><button class="h-menu-button">Adicionar Conteúdo</button></li>
-                <li><button class="h-menu-button">Customização</button></li>
-                <li><button class="h-menu-button">Importar</button></li>
-                <li><button class="h-menu-button">Exportar</button></li>
-            </ul>
-        </nav>
+        <ul style="list-style: none;">
+            <li><button id="menu-inicio" class="h-menu-button"><img src="../assets/home.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-add" class="h-menu-button"><img src="../assets/add.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-biblioteca" class="h-menu-button"><img src="../assets/drawer.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-custom" class="h-menu-button"><img src="../assets/brush.png" class="h-menu-button-icon"></button></li>
+        </ul>
     </aside>
-
+    
     <main>
 
-        
         <section id="recente">
-        <div class="midias-scroller">
-                <div class="midias-container">Item 1</div>
-                <div class="midias-container">Item 2</div>
-                <div class="midias-container">Item 3</div>
-                <div class="midias-container">Item 4</div>
-                <div class="midias-container">Item 5</div>
+            <div class="midias-scroller" id="midias-scroller">
+                
             </div>
         </section>
 
         <section id="filtro">
-
-            <div class="filter_bar">    
-                <button class="filter_all_button"><img src="../assets/squares.png" class="filter-icon"></button>
-                <button class="filter_games_button"><img src="../assets/gamepad.png" class="filter-icon"></button>
-                <button class="filter_books_button"><img src="../assets/books.png" class="filter-icon"></button>
-                <button class="filter_tv_button"><img src="../assets/tv.png" class="filter-icon" style="width: 64px;height: 48px;"></button>
+            <div class="barra-filtro">    
+                <button class="filter_all_button">
+                    <img src="../assets/squares.png" class="filter-icon">
+                </button>
+                <button class="filter_games_button">
+                    <img src="../assets/gamepad.png" class="filter-icon">
+                </button>
+                <button class="filter_books_button">
+                    <img src="../assets/books.png" class="filter-icon">
+                </button>
+                <button class="filter_tv_button">
+                    <img src="../assets/tv.png" class="filter-icon" style="width: 64px;height: 48px;">
+                </button>
             </div>
         </section>
 
     </main> 
+
+    <script type="module" src="../script/index.js"></script>
 
 </body>
 </html>
