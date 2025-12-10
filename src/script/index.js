@@ -47,7 +47,7 @@ function criarCard(midia) {
         <h3 class="midia-nome">${midia.nome}</h3>
 
         <button class="btn-remover" data-id="${midia.id}">
-            Remover
+        <img src="../assets/delete.png" class="icon-remover">
         </button>
     `;
 
