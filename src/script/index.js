@@ -1,0 +1,84 @@
+import { carregarMidias, removerMidia } from "./storage.js";
+
+// MENU LATERAL
+const btnMenu = document.querySelector("#menu");
+const barraLado = document.querySelector("#barra-lado");
+
+btnMenu?.addEventListener("click", () => {
+    barraLado.classList.toggle("aberto");
+});
+
+// LINKS DO MENU
+document.querySelector("#menu-add")?.addEventListener("click", () => {
+    window.location.href = "tela-add.html";
+});
+
+document.querySelector("#menu-inicio")?.addEventListener("click", () => {
+    window.location.href = "index.html";
+});
+
+// ÁREA ÚNICA DE CARDS
+const container = document.querySelector("#midias-scroller");
+
+let modoHorizontal = false;
+
+// BOTÃO PARA TROCAR MODO
+document.querySelector(".filter_all_button")?.addEventListener("click", () => {
+    modoHorizontal = !modoHorizontal;
+
+    if (modoHorizontal) {
+        container.classList.add("horizontal-ativo");
+    } else {
+        container.classList.remove("horizontal-ativo");
+    }
+
+    carregarCards();
+});
+
+// CRIAÇÃO DOS CARDS
+function criarCard(midia) {
+    const card = document.createElement("div");
+    card.classList.add("midias-container");
+
+    if (modoHorizontal) card.classList.add("horizontal-card");
+
+    card.innerHTML = `
+        <img src="${midia.image}" class="midia-img" data-url="${midia.url}">
+        <h3 class="midia-nome">${midia.nome}</h3>
+
+        <button class="btn-remover" data-id="${midia.id}">
+        <img src="../assets/delete.png" class="icon-remover">
+        </button>
+    `;
+
+    card.querySelector(".midia-img").addEventListener("click", () => {
+        if (midia.url) window.open(midia.url, "_blank");
+    });
+
+    return card;
+}
+
+// RENDERIZAÇÃO
+function carregarCards() {
+    const midias = carregarMidias();
+    container.innerHTML = "";
+
+    if (midias.length === 0) {
+        container.innerHTML = "<p>Nenhuma mídia cadastrada.</p>";
+        return;
+    }
+
+    midias.forEach(midia => {
+        container.appendChild(criarCard(midia));
+    });
+
+    document.querySelectorAll(".btn-remover").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-id");
+            removerMidia(id);
+            carregarCards();
+        });
+    });
+}
+
+carregarCards();
