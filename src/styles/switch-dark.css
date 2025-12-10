@@ -4,6 +4,8 @@ html , body {
     overflow: hidden;
     font-family: 'Inter var', sans-serif;
     font-size: x-large;
+    min-width: 1874px;
+    min-height: 921;
 }
 
 div {
@@ -48,6 +50,11 @@ div {
     margin-left: 48px;
     border-radius: 14px;
     top: -2000px;
+<<<<<<< Updated upstream
+=======
+    overflow: scroll;
+    scrollbar-width: none;
+>>>>>>> Stashed changes
 }
 
 .h-menu-button {
@@ -152,10 +159,21 @@ div {
 }
 
 .midias-scroller {
+<<<<<<< Updated upstream
+=======
+    position: relative;
+    margin-left: 48px;
+>>>>>>> Stashed changes
     display: flex;
     gap: 16px;
     overflow-x: auto;
     padding: 10px;
+<<<<<<< Updated upstream
+=======
+    background: none;
+    scrollbar-width: none;
+    bottom: 10px;
+>>>>>>> Stashed changes
 }
 
 .midias-container {
@@ -214,7 +232,8 @@ div {
 }
 
 .add-new-element:hover,
-.add-new-image:hover {
+.add-new-image:hover,
+.btn-salvar:hover {
     outline: 2px solid #00FEC9;
 }
 
@@ -269,6 +288,16 @@ input[type="radio"] {
 
 .radio-text {
     font-size: 70%;
+}
+
+.btn-salvar {
+    background-color: #666666;
+    margin-left: 12%;
+    margin-top: 40px;
+    scale: 2;
+    border: none;
+    border-radius: 14px;
+    transition: ease-in 100ms;
 }
 
 #barra-lado {
