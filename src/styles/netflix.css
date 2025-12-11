@@ -383,3 +383,78 @@ input[type="radio"] {
     z-index: 1000;
     border-radius: 0px;
 }
+#background-seletor {
+    background-image: url(../assets/dot.png);
+    background-size: 20px;
+    background-repeat: repeat;
+    background-color: #8b0108;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vw;
+    z-index: 2000;
+    opacity: 0%;
+    pointer-events: none;
+    animation: autoscroll 60s linear infinite;
+    transition: ease-in 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes autoscroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}
+
+#background-seletor.aberto {
+    opacity: 40%;
+}
+
+#menu-seletor {
+    opacity: 0%;
+    background-color: #222;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    transition: ease-out 0.7s;
+    z-index: 2001;
+    padding: 20px;
+}
+#menu-seletor.aberto {
+    opacity: 100%;
+    top: 50%;
+}
+.theme-icon {
+    height: 104px;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+    outline: 3px solid #E50914;
+}
+.t-menu-button {
+    width: 100%;
+    background-color: #000;
+    border: none;
+    border-radius: 14px;
+    margin-left: -30px;
+    margin-top: 32px;
+    padding: 10px;
+    transition: linear 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #eee;
+}
+.theme-header {
+    background-color: #666666;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 14px;
+}

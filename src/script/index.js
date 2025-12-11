@@ -35,6 +35,40 @@ document.querySelector("#menu-biblioteca")?.addEventListener("click", () => {
     carregarCards();
 });
 
+// BOTÃO MENU TROCAR TEMA
+const btnTema = document.querySelector("#menu-custom");
+const SeletorTema = document.querySelector("#menu-seletor");
+const BackgroundTema = document.querySelector("#background-seletor");
+
+btnTema?.addEventListener("click", () => {
+    BackgroundTema.classList.toggle("aberto");
+    SeletorTema.classList.toggle("aberto");
+});
+
+//BOTÕES DE TROCA DE TEMA
+const styleCSS = document.querySelector("#tema-css");
+const temaNS1 = document.querySelector("#tema-nin-dark");
+const temaNS2 = document.querySelector("#tema-nin-light");
+const temaNet = document.querySelector("#tema-netflix");
+
+temaNS1?.addEventListener("click", () => {
+    BackgroundTema.classList.toggle("aberto");
+    SeletorTema.classList.toggle("aberto");
+    styleCSS.href = "../styles/switch-dark.css";
+});
+
+temaNS2?.addEventListener("click", () => {
+    BackgroundTema.classList.toggle("aberto");
+    SeletorTema.classList.toggle("aberto");
+    styleCSS.href = "../styles/switch-light.css";
+});
+
+temaNet?.addEventListener("click", () => {
+    BackgroundTema.classList.toggle("aberto");
+    SeletorTema.classList.toggle("aberto");
+    styleCSS.href = "../styles/netflix.css";
+});
+
 // CRIAÇÃO DOS CARDS
 function criarCard(midia) {
     const card = document.createElement("div");
