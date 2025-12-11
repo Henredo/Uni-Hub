@@ -112,6 +112,7 @@ const styleCSS = document.querySelector("#tema-css");
 const temaNS1 = document.querySelector("#tema-nin-dark");
 const temaNS2 = document.querySelector("#tema-nin-light");
 const temaNet = document.querySelector("#tema-netflix");
+const temaMine = document.querySelector("#tema-minecraft");
 
 // Abre o seletor
 btnTema?.addEventListener("click", () => {
@@ -130,6 +131,7 @@ function trocarTema(arquivo) {
 temaNS1?.addEventListener("click", () => trocarTema("../styles/switch-dark.css"));
 temaNS2?.addEventListener("click", () => trocarTema("../styles/switch-light.css"));
 temaNet?.addEventListener("click", () => trocarTema("../styles/netflix.css"));
+temaMine?.addEventListener("click", () => trocarTema("../styles/minecraft.css"));
 
 /* ============================
    CRIAR CARD
