@@ -166,12 +166,13 @@ div {
 
 
 #recente {
-    margin-top: 20px;
+    position: absolute;
+    width: 100vw;
+    bottom: 25%;
+    margin-left: 48px;
 }
 
 .midias-scroller {
-    position: relative;
-    margin-left: 48px;
     display: flex;
     overflow-x: scroll;
     padding: 10px;
@@ -184,7 +185,7 @@ div {
     min-width: 320px;
     max-width: 320px;
     height: 400px;
-    background: #666;
+    background: #666666;
     padding: 10px;
     margin-left: 148px;
     border-radius: 12px;
