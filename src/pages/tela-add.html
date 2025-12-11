@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/switch-dark.css">
+    <link id="tema-css" rel="stylesheet" href="../styles/switch-dark.css">
 
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -18,11 +18,11 @@
         </button> 
     </header>
 
+    <div class="esconde-animação-h">‎ </div>
     <aside id="barra-lado" class="hamburguer-menu">
-        <ul>
-            <li><button id="menu-inicio" class="h-menu-button">Início</button></li>
-            <li><button id="menu-add" class="h-menu-button">Adicionar</button></li>
-            <li><button id="menu-custom" class="h-menu-button">Customização</button></li>
+        <ul style="list-style: none;">
+            <li><button id="menu-inicio" class="h-menu-button"><img src="../assets/home.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-add" class="h-menu-button"><img src="../assets/add.png" class="h-menu-button-icon"></button></li>
         </ul>
     </aside>
 
@@ -75,6 +75,7 @@
     <script type="module" src="../script/add.js"></script>
 
 </body>
+<script type="module" src="../script/theme.js"></script>
 </html>
 <datalist id="tags-list">
     <option>Ação</option>
