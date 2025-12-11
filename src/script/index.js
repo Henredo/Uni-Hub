@@ -23,7 +23,7 @@ const container = document.querySelector("#midias-scroller");
 let modoHorizontal = false;
 
 // BOTÃO PARA TROCAR MODO
-document.querySelector(".filter_all_button")?.addEventListener("click", () => {
+document.querySelector("#menu-biblioteca")?.addEventListener("click", () => {
     modoHorizontal = !modoHorizontal;
 
     if (modoHorizontal) {
