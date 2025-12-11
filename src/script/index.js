@@ -55,18 +55,21 @@ temaNS1?.addEventListener("click", () => {
     BackgroundTema.classList.toggle("aberto");
     SeletorTema.classList.toggle("aberto");
     styleCSS.href = "../styles/switch-dark.css";
+    localStorage.setItem('tema', "../styles/switch-dark.css");
 });
 
 temaNS2?.addEventListener("click", () => {
     BackgroundTema.classList.toggle("aberto");
     SeletorTema.classList.toggle("aberto");
     styleCSS.href = "../styles/switch-light.css";
+    localStorage.setItem('tema', "../styles/switch-light.css");
 });
 
 temaNet?.addEventListener("click", () => {
     BackgroundTema.classList.toggle("aberto");
     SeletorTema.classList.toggle("aberto");
     styleCSS.href = "../styles/netflix.css";
+    localStorage.setItem('tema', "../styles/netflix.css");
 });
 
 // CRIAÇÃO DOS CARDS
