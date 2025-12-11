@@ -50,6 +50,7 @@ const styleCSS = document.querySelector("#tema-css");
 const temaNS1 = document.querySelector("#tema-nin-dark");
 const temaNS2 = document.querySelector("#tema-nin-light");
 const temaNet = document.querySelector("#tema-netflix");
+const temaMine = document.querySelector("#tema-minecraft");
 
 temaNS1?.addEventListener("click", () => {
     BackgroundTema.classList.toggle("aberto");
@@ -70,6 +71,13 @@ temaNet?.addEventListener("click", () => {
     SeletorTema.classList.toggle("aberto");
     styleCSS.href = "../styles/netflix.css";
     localStorage.setItem('tema', "../styles/netflix.css");
+});
+
+temaMine?.addEventListener("click", () => {
+    BackgroundTema.classList.toggle("aberto");
+    SeletorTema.classList.toggle("aberto");
+    styleCSS.href = "../styles/minecraft.css";
+    localStorage.setItem('tema', "../styles/minecraft.css");
 });
 
 

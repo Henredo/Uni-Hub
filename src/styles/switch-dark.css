@@ -368,7 +368,7 @@ input[type="radio"] {
     background-image: url(../assets/dot.png);
     background-size: 20px;
     background-repeat: repeat;
-    background-color: #101157;
+    background-color: #333;
     position: absolute;
     top: 0;
     left: 0;
@@ -393,7 +393,7 @@ input[type="radio"] {
 }
 
 #background-seletor.aberto {
-    opacity: 40%;
+    opacity: 50%;
 }
 
 #menu-seletor {
