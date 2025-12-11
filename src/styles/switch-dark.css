@@ -1,12 +1,17 @@
+/* switch-dark.css - versão mesclada e corrigida */
 
-html , body {
+:root{
+  --cor-principal: #00FEC9; /* cor usada para filtro ativo / destaque (mude se quiser) */
+}
+
+/* reset/geral */
+html, body {
     background-color: #2d2d2d;
     height: 100%;
     overflow: hidden;
     font-family: 'Inter var', sans-serif;
     font-size: x-large;
-    min-width: 1874px;
-    min-height: 921;
+    /* NÃO coloquei min-width/height forçados aqui — seu layout deve ser responsivo */
 }
 
 div {
@@ -14,6 +19,7 @@ div {
     border-radius: 4px;
 }
 
+/* BOTÃO BURGER */
 .hamburguer_button {
     background-color: #666666;
     border: none;
@@ -32,18 +38,13 @@ div {
 .hamburguer_icon {
     width: 60px;
     height: 55px;
-    scale: 1.32;
+    transform: scale(1.32);
 }
 
-.hamburguer_button:hover {
-    scale: 1.1;
-}
+.hamburguer_button:hover { transform: scale(1.1); }
+.hamburguer_button:active { transition-duration: 100ms; transform: scale(0.9); }
 
-.hamburguer_button:active {
-    transition-duration: 100ms;
-    scale: 1;
-}
-
+/* MENU HAMBURGUER (dentro do header) */
 .hamburguer-menu {
     position: absolute;
     background-color: #666666;
@@ -51,27 +52,20 @@ div {
     margin-left: 48px;
     border-radius: 14px;
     top: -2000px;
-    overflow: scroll;
-    scrollbar-width: none;
+    overflow: hidden; /* esconde scroll por padrão */
 }
 
 .h-menu-button {
-    background-color: #999;
-    border: none;
-    border-radius: 24px;
-    margin-left: -30px;
     margin-top: 32px;
-    padding: 10px;
-    transition: linear 0.2s;
+    background-color: transparent;
+    border: none;
+    padding: 8px 12px;
+    color: inherit;
+    cursor: pointer;
 }
-.h-menu-button:hover {
-    scale: 1.1;
-}
-.h-menu-button-icon {
-    height: 80px;
-    aspect-ratio: 1/1;
-}
+.h-menu-button:hover { transform: scale(1.05); }
 
+/* BARRA DE PESQUISA */
 .barra-pesquisa {
     background-color: #666666;
     border: none;
@@ -98,17 +92,16 @@ div {
     height: 95%;
 }
 
-.input-pesquisa::placeholder {
-    color: #383838;
-}
+.input-pesquisa::placeholder { color: #383838; }
 
 #lupa-icon {
     height: 50%;
     aspect-ratio: 1/1;
-    scale: 1.32;
-    opacity: 43%;
+    transform: scale(1.32);
+    opacity: 0.43;
 }
 
+/* BARRA DE FILTROS (fundo central embaixo) */
 .barra-filtro {
     position: absolute;
     left: 50%;
@@ -118,11 +111,10 @@ div {
     width: 440px;
     height: 64px;
     display: flex;
-    flex-direction: row;
+    gap: 42px;
     justify-content: center;
     align-items: center;
-    column-gap: 42px;
-    scale: 1.3;
+    background: none;
 }
 
 .filter_all_button,
@@ -135,7 +127,8 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: hidden;
+    border: none;
+    cursor: pointer;
 }
 
 .filter_all_button { background-color: #96D467; }
@@ -143,86 +136,63 @@ div {
 .filter_books_button { background-color: #E4D168; }
 .filter_tv_button { background-color: #CE4545; }
 
-.filter-icon {
-    width: 40px;
-    height: 40px;
-}
+.filter-icon { width: 40px; height: 40px; }
 
 .filter_all_button:hover,
 .filter_games_button:hover,
 .filter_books_button:hover,
-.filter_tv_button:hover {
-    transition: all linear 100ms;
-    scale: 1.1;
-}
+.filter_tv_button:hover { transform: scale(1.1); }
 
 .filter_all_button:active,
 .filter_games_button:active,
 .filter_books_button:active,
-.filter_tv_button:active {
-    transition: all linear 100ms;
-    scale: 1;
+.filter_tv_button:active { transform: scale(1); }
+
+/* marca visual de filtro ativo */
+.filtro-ativo {
+    outline: 3px solid var(--cor-principal);
+    border-radius: 8px;
 }
 
+/* ===========================
+   RECENTES / MIDIAS SCROLLER
+   =========================== */
 
 #recente {
-    position: absolute;
-    width: 100vw;
-    bottom: 25%;
-    margin-left: 48px;
+    margin-top: 20px;
 }
 
+/* scroller horizontal principal */
 .midias-scroller {
     display: flex;
-    overflow-x: scroll;
+    gap: 16px;
+    overflow-x: auto;
     padding: 10px;
     background: none;
     scrollbar-width: none;
-    bottom: 10px;
 }
 
+/* esconder scrollbar no WebKit */
+.midias-scroller::-webkit-scrollbar { display: none; }
+
+/* cada card dentro do scroller */
 .midias-container {
-    min-width: 320px;
-    max-width: 320px;
-    height: 400px;
-    background: #666666;
+    min-width: 150px;
+    background: #222;
     padding: 10px;
-    margin-left: 148px;
     border-radius: 12px;
     text-align: center;
-    overflow: hidden;
-    transition: ease-in 0.1s;
-    
-    & .midia-img {
-        height: 320px;
-        width: 100%;
-        object-fit: contain;
-        aspect-ratio: 1/1;
-    }
-    & .btn-remover {
-        position: relative;
-        bottom: 64px;
-        left: 136px;
-        height: 40px;
-        width: 40px;
-        background-color: #999999;
-        border: none;
-        border-radius: 4px;
-        & .icon-remover {
-            position: relative;
-            right: 2px;
-            height: 36px;
-        }
-    }
-    & .btn-remover:hover {
-        scale: 1.1;
-    }
-}
-.midias-container:hover {
-    outline: 4px solid #00FEC9;
-    scale: 1.005;
+    flex-shrink: 0;
+    transition: transform 120ms ease, outline 120ms ease;
 }
 
+/* hover sutil */
+.midias-container:hover {
+    outline: 4px solid var(--cor-principal);
+    transform: scale(1.005);
+}
+
+/* estilo quando o layout vira "grade" (horizontal-ativo usado para grid) */
 .horizontal-ativo {
     flex-wrap: wrap;
     justify-content: center;
@@ -232,6 +202,16 @@ div {
     width: 200px;
 }
 
+/* botão remover/icon dentro do card (simples e compatível) */
+.icon-remover {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+/* ===========================
+   ADD / FORM
+   =========================== */
 
 #add-midia-header {
     display: flex;
@@ -267,14 +247,12 @@ div {
     border-radius: 40px;
     padding-left: 10px;
     overflow: hidden;
-    transition: ease-in 100ms;
+    transition: outline 100ms ease;
 }
 
 .add-new-element:hover,
 .add-new-image:hover,
-.btn-salvar:hover {
-    outline: 2px solid #00FEC9;
-}
+.btn-salvar:hover { outline: 2px solid var(--cor-principal); }
 
 .add-new-image {
     border-radius: 48px;
@@ -289,7 +267,7 @@ div {
     background-repeat: no-repeat;
     background-size: 70%;
     background-position: center;
-    transition: ease-in 100ms;
+    transition: outline 100ms ease;
 }
 
 #add-image {
@@ -308,7 +286,7 @@ div {
     pointer-events: none;
 }
 
-#nome , #url , #tags {
+#nome, #url, #tags {
     background-color: #666666;
     border: none;
     outline: none;
@@ -318,51 +296,47 @@ div {
 }
 
 input[type="radio"] {
-    accent-color: #00FEC9;
+    accent-color: var(--cor-principal);
     width: 28px;
     height: 28px;
     cursor: pointer;
     margin-left: 20px;
 }
 
-.radio-text {
-    font-size: 70%;
-}
+.radio-text { font-size: 70%; }
 
 .btn-salvar {
     background-color: #666666;
     margin-left: 12%;
     margin-top: 40px;
-    scale: 2;
+    transform: scale(1);
     border: none;
     border-radius: 14px;
     transition: ease-in 100ms;
 }
 
+/* ===========================
+   BARRA LATERAL (fix, deslizante pela esquerda)
+   =========================== */
+
+/* mantive o comportamento que você tinha antes — slide pela esquerda */
 #barra-lado {
     position: fixed;
-    top: -100;
-    width: 120px;
-    height: fit-content;
-    background: #555;
+    top: 0;
+    left: -300px;
+    width: 260px;
+    height: 100vh;
+    background: #111;
     z-index: 999;
-    /* padding-top: 150px; */
-    transition: top 0.3s ease;
+    padding-top: 150px;
+    transition: left 0.3s ease;
 }
 
-#barra-lado.aberto {
-    top: 148px;
-}
-.esconde-animação-h {
-    position: absolute;
-    margin-left: 48px;
-    top: 0px;
-    background-color: #2d2d2d;
-    width: 120px;
-    height: 100px;
-    z-index: 1000;
-    border-radius: 0px;
-}
+#barra-lado.aberto { left: 0; }
+
+/* ===========================
+   SELECTOR DE TEMA / BACKGROUND (tinhas na Develop)
+   =========================== */
 
 #background-seletor {
     background-image: url(../assets/dot.png);
@@ -384,17 +358,10 @@ input[type="radio"] {
     align-items: center;
 }
 @keyframes autoscroll {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-50%, -50%);
-    }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); }
 }
-
-#background-seletor.aberto {
-    opacity: 40%;
-}
+#background-seletor.aberto { opacity: 0.4; pointer-events: auto; }
 
 #menu-seletor {
     opacity: 0%;
@@ -411,15 +378,13 @@ input[type="radio"] {
     pointer-events: none;
 }
 #menu-seletor.aberto {
-    opacity: 100%;
+    opacity: 1;
     top: 50%;
     pointer-events: initial;
 }
-.theme-icon {
-    height: 104px;
-    aspect-ratio: 1/1;
-    border-radius: 24px;
-}
+
+.theme-icon { height: 104px; aspect-ratio: 1/1; border-radius: 24px; }
+
 .t-menu-button {
     width: 100%;
     background-color: #999;
@@ -433,9 +398,12 @@ input[type="radio"] {
     align-items: center;
     gap: 20px;
 }
+
 .theme-header {
     background-color: #666666;
     width: fit-content;
     padding: 10px;
     border-radius: 14px;
 }
+
+/* fim do arquivo */
