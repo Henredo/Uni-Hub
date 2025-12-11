@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="tema-css" rel="stylesheet" href="../styles/switch-dark.css">
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <title>Adicionar</title>
+</head>
+<body>
+
+    <header>
+        <button id="menu" class="hamburguer_button">
+            <img class="hamburguer_icon" src="../assets/hamburguer.png">
+        </button> 
+    </header>
+
+    <div class="esconde-animação-h">‎ </div>
+    <aside id="barra-lado" class="hamburguer-menu">
+        <ul style="list-style: none;">
+            <li><button id="menu-inicio" class="h-menu-button"><img src="../assets/home.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-add" class="h-menu-button"><img src="../assets/add.png" class="h-menu-button-icon"></button></li>
+        </ul>
+    </aside>
+
+    <header id="add-midia-header">
+        <h1>Adicionar Midia</h1>
+    </header>
+
+    <fieldset class="add-new-field">
+
+        <div class="add-new-image">
+            <input id="add-image" type="file" accept="image/*">
+            <p id="texto-add-imagem">Selecionar imagem</p>
+        </div>
+
+        <div class="add-new-element">
+            <label for="nome">Nome: </label>
+            <input id="nome" type="text">
+        </div>
+
+        <div class="add-new-element">
+            <label for="url">URL:</label>
+            <input id="url" type="url" placeholder="Cole o URL do site aqui">
+        </div>
+
+        <div class="add-new-element">
+            <label>Tipo: </label>
+
+            <input type="radio" name="tipo" value="game">
+            <p class="radio-text">Jogo</p>
+
+            <input type="radio" name="tipo" value="book">
+            <p class="radio-text">Livro</p>
+
+            <input type="radio" name="tipo" value="serie">
+            <p class="radio-text">Série</p>
+
+            <input type="radio" name="tipo" value="other">
+            <p class="radio-text">Outros</p>
+        </div>
+
+        <div class="add-new-element">
+            <label>Tags: </label>
+            <input id="tags" type="search" list="tags-list">
+        </div>
+
+    </fieldset>
+
+    <button id="salvar" class="btn-salvar">SALVAR</button>
+
+    <script type="module" src="../script/add.js"></script>
+
+</body>
+<script type="module" src="../script/theme.js"></script>
+</html>
+<datalist id="tags-list">
+    <option>Ação</option>
+    <option>Fps</option>
+    <option>Plataforma</option>
+    <option>2D</option>
+    <option>3D</option>
+    <option>Roguelike</option>
+    <option>Suspense</option>
+    <option>Puzzle</option>
+    <option>Cardgame</option>
+    <option>Ritmo</option>
+    <option>Shounen</option>
+    <option>Shojo</option>
+    <option>Isekai</option>
+    <option>Seinen</option>
+    <option>Mecha</option>
+    <option>Aventura</option>
+    <option>Drama</option>
+    <option>Comedia</option>
+    <option>Terror</option>
+    <option>Adulto</option>
+    <option>Ficção Científica</option>
+    <option>Documentario</option>
+</datalist>

@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U-Hub</title>
+    <link id="tema-css" rel="stylesheet" href="../styles/switch-dark.css">
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>UniHub - Página Principal</title>
 </head>
+
 <body>
+
+    <header>
+        <button id="menu" class="hamburguer_button">
+            <img class="hamburguer_icon" src="../assets/hamburguer.png">
+        </button> 
+        <div class="barra-pesquisa">
+            <img src="../assets/lupa.png" id="lupa-icon">
+            <input id="campo-pesquisa" type="text" placeholder="Procurar" class="input-pesquisa">
+        </div>
+    </header>
     
+    <div class="esconde-animação-h">‎ </div>
+    <aside id="barra-lado" class="hamburguer-menu">
+        <ul style="list-style: none;">
+            <li><button id="menu-inicio" class="h-menu-button"><img src="../assets/home.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-add" class="h-menu-button"><img src="../assets/add.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-biblioteca" class="h-menu-button"><img src="../assets/drawer.png" class="h-menu-button-icon"></button></li>
+            <li><button id="menu-custom" class="h-menu-button"><img src="../assets/brush.png" class="h-menu-button-icon"></button></li>
+        </ul>
+    </aside>
+    <div id="menu-seletor">
+        <h2 class="theme-header">Selecione uma opção de tema</h2>
+        <hr>
+        <ul style="list-style: none;">
+            <li><button id="tema-nin-dark" class="t-menu-button"><img src="../assets/nswitch.jpg" class="theme-icon"> <h4 style="font-size: x-large;">Ninendo switch dark</h4></button></li>
+            <li><button id="tema-nin-light" class="t-menu-button"><img src="../assets/nswitch.jpg" style="filter: invert();" class="theme-icon"><h4 style="font-size: x-large;">Ninendo switch light</h4></button></li>
+            <li><button id="tema-netflix" class="t-menu-button"><img src="../assets/netflix.png" class="theme-icon"><h4 style="font-size: x-large;">Netflix</h4></button></li>
+            <li><button id="tema-minecraft" class="t-menu-button"><img src="../assets/cube.png" class="theme-icon"><h4 style="font-size: x-large;">(BETA ACCESS) Minecraft</h4></button></li>
+        </ul>
+    </div>
+    <div id="background-seletor"></div>
+
+
+    <main>
+
+        <section id="recente">
+            <div class="midias-scroller" id="midias-scroller">
+                
+            </div>
+        </section>
+
+        <section id="filtro">
+            <div class="barra-filtro">    
+                <button class="filter_all_button">
+                    <img src="../assets/squares.png" class="filter-icon">
+                </button>
+                <button class="filter_games_button">
+                    <img src="../assets/gamepad.png" class="filter-icon">
+                </button>
+                <button class="filter_books_button">
+                    <img src="../assets/books.png" class="filter-icon">
+                </button>
+                <button class="filter_tv_button">
+                    <img src="../assets/tv.png" class="filter-icon" style="width: 64px;height: 48px;">
+                </button>
+            </div>
+        </section>
+
+    </main> 
+
+    <script type="module" src="../script/index.js"></script>
+    <script type="module" src="../script/theme.js"></script>
+
 </body>
 </html>
