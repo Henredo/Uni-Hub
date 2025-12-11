@@ -286,3 +286,8 @@ input[type="radio"] {
 #barra-lado.aberto {
     left: 0;
 }
+
+.filtro-ativo {
+    outline: 3px solid var(--cor-principal);
+    border-radius: 8px;
+}
