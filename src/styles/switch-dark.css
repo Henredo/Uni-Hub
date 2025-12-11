@@ -343,7 +343,7 @@ input[type="radio"] {
     position: fixed;
     top: -100;
     width: 120px;
-    height: 60%;
+    height: fit-content;
     background: #555;
     z-index: 999;
     /* padding-top: 150px; */
@@ -400,7 +400,7 @@ input[type="radio"] {
     opacity: 0%;
     background-color: #555;
     position: absolute;
-    top: 0px;
+    top: -100px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: fit-content;
@@ -408,10 +408,12 @@ input[type="radio"] {
     transition: ease-out 0.7s;
     z-index: 2001;
     padding: 20px;
+    pointer-events: none;
 }
 #menu-seletor.aberto {
     opacity: 100%;
     top: 50%;
+    pointer-events: initial;
 }
 .theme-icon {
     height: 104px;

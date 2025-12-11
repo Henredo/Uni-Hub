@@ -8,6 +8,10 @@ export function salvarMidias(lista) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
 }
 
+export function salvarTema(lista) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
+}
+
 export function adicionarMidia(midia) {
     const lista = carregarMidias();
 
