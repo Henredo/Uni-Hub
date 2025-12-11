@@ -9,7 +9,17 @@ Com uma interface interativa e com muita customização, o Uni-Hub pode te ajuda
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" width="52" alt="javascript logo"  />
 </div>
 <h2>Feito por :</h2>
-<a href="https://github.com/Henredo" target="_blank" align="bottom">
-  <img src="https://avatars.githubusercontent.com/u/202291299?v=4" height="64" width="64" style="border-radius:4px;"/>
-  <strong>Henry M. Leme </strong>
-</a>
+<div>
+  <div  align="bottom">
+  <a href="https://github.com/Henredo" target="_blank">
+    <img src="https://avatars.githubusercontent.com/u/202291299?v=4" height="64" width="64" style="border-radius:40px;"/>
+    <strong>Henry M. Leme </strong>
+  </a>
+  </div>
+  <div  align="top">
+  <a href="https://github.com/VexVinny" target="_blank">
+    <img src="https://avatars.githubusercontent.com/u/202291299?v=4" height="64" width="64" style="border-radius:4px;"/>
+    <strong>Vinicius Ribeiro </strong>
+  </a>
+  </div>
+</div>
