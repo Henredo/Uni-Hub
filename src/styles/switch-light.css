@@ -14,6 +14,7 @@ div {
     border-radius: 4px;
 }
 
+
 .hamburguer_button {
     background-color: #FFFDFE;
     border: none;
@@ -395,7 +396,6 @@ input[type="radio"] {
     opacity: 0%;
     pointer-events: none;
     animation: autoscroll 60s linear infinite;
-    transition: ease-in 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -410,22 +410,25 @@ input[type="radio"] {
 }
 
 #background-seletor.aberto {
+    transition: ease-in 0.5s;
     opacity: 40%;
 }
 
 #menu-seletor {
     opacity: 0%;
     position: absolute;
-    top: 0px;
+    top: -100px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: fit-content;
     height: fit-content;
-    transition: ease-out 0.7s;
     z-index: 2001;
     padding: 20px;
+    pointer-events: none;
 }
 #menu-seletor.aberto {
+    pointer-events: initial;
+    transition: ease-out 0.7s;
     opacity: 100%;
     top: 50%;
 }

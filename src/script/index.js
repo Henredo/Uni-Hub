@@ -72,6 +72,7 @@ temaNet?.addEventListener("click", () => {
     localStorage.setItem('tema', "../styles/netflix.css");
 });
 
+
 // CRIAÇÃO DOS CARDS
 function criarCard(midia) {
     const card = document.createElement("div");
