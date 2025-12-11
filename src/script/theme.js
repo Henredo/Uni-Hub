@@ -1,8 +1,16 @@
-//CARREGAR TEMA
+
 const styleCSS = document.querySelector("#tema-css");
-const unitema = localStorage.getItem('tema');
-if (unitema !== styleCSS.href) {
-    styleCSS.href = unitema;
-} else if (unitema == null) {
-    localStorage.setItem('tema', "../styles/switch-dark.css");
+
+if (styleCSS) {
+
+    let unitema = localStorage.getItem('tema');
+
+    if (!unitema) {
+        unitema = "../styles/switch-dark.css";
+        localStorage.setItem('tema', unitema);
+    }
+
+    if (!styleCSS.href.includes(unitema)) {
+        styleCSS.href = unitema;
+    }
 }
