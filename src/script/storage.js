@@ -12,6 +12,15 @@ export function salvarTema(lista) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
 }
 
+function urlSegura(url) {
+    try {
+        const u = new URL(url);
+        return u.protocol === "http:" || u.protocol === "https:";
+    } catch (err) {
+        return false;
+    }
+}
+
 export function adicionarMidia(midia) {
     const lista = carregarMidias();
 
@@ -22,6 +31,10 @@ export function adicionarMidia(midia) {
 
     if (!midia.image) {
         return { success: false, message: "Selecione uma imagem!" };
+    }
+
+    if (!urlSegura(midia.url)) {
+        return { success: false, message: "URL inválida ou maliciosa!" };
     }
 
     lista.push(midia);

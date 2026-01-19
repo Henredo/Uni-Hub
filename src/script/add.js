@@ -1,6 +1,5 @@
 import { adicionarMidia } from "./storage.js";
 
-// MENU
 const btnMenu = document.querySelector("#menu");
 const barraLado = document.querySelector("#barra-lado");
 
@@ -17,6 +16,16 @@ document.querySelector("#menu-inicio").addEventListener("click", () => {
 document.querySelector("#menu-add").addEventListener("click", () => {
     window.location.href = "tela-add.html";
 });
+
+function urlValida(url) {
+    try {
+        const u = new URL(url);
+        if (u.protocol === "http:" || u.protocol === "https:") return true;
+        return false;
+    } catch (err) {
+        return false;
+    }
+}
 
 // FORM
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,6 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const url = document.getElementById("url").value.trim();
         const tag = document.getElementById("tags").value.trim();
 
+        if (!urlValida(url)) {
+            alert("URL inválida ou potencialmente maliciosa! Use apenas http:// ou https://");
+            return;
+        }
+
         const tipoElemento = document.querySelector("input[name='tipo']:checked");
         const tipo = tipoElemento ? tipoElemento.value : "other";
 
@@ -59,7 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
             tag
         };
 
-        adicionarMidia(novaMidia);
+        const resultado = adicionarMidia(novaMidia);
+
+        if (!resultado.success) {
+            alert(resultado.message);
+            return;
+        }
+
         window.location.href = "index.html";
     });
 
