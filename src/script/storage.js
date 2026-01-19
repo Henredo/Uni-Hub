@@ -12,6 +12,15 @@ export function salvarTema(lista) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(lista));
 }
 
+function urlSegura(url) {
+    try {
+        const u = new URL(url);
+        return u.protocol === "http:" || u.protocol === "https:";
+    } catch (err) {
+        return false;
+    }
+}
+
 export function adicionarMidia(midia) {
     const lista = carregarMidias();
 
@@ -24,7 +33,11 @@ export function adicionarMidia(midia) {
         return { success: false, message: "Selecione uma imagem!" };
     }
 
-    lista.push(midia);
+    if (!urlSegura(midia.url)) {
+        return { success: false, message: "URL inválida ou maliciosa!" };
+    }
+
+    lista.unshift(midia);
     salvarMidias(lista);
 
     return { success: true, message: "Mídia adicionada com sucesso!" };

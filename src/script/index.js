@@ -1,4 +1,4 @@
-import { carregarMidias, removerMidia } from "./storage.js";
+import { carregarMidias, removerMidia , salvarMidias} from "./storage.js";
 
 /* ============================
    MENU LATERAL
@@ -151,8 +151,14 @@ function criarCard(midia) {
     `;
 
     card.querySelector(".midia-img")?.addEventListener("click", () => {
-        if (midia.url) window.open(midia.url, "_blank");
-    });
+    const lista = carregarMidias();
+    const listaFiltrada = lista.filter(item => item.id !== midia.id);
+    listaFiltrada.unshift(midia);
+    salvarMidias(listaFiltrada);
+    carregarCards();
+    
+    if (midia.url) window.open(midia.url, "_blank");
+});
 
     return card;
 }
