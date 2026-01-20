@@ -72,6 +72,21 @@ div {
     aspect-ratio: 1/1;
 }
 
+.horizontal-ativo {
+    position: absolute;
+    top: 16vh;
+    & .midias-scroller {
+        position: relative;
+        top: 10px;
+        width: 100vw;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 255px 255px 255px 255px 255px;
+        grid-template-rows: 315px 315px;
+        overflow: scroll;
+    }
+}
+
 .barra-pesquisa {
     background-color: #666666;
     border: none;
@@ -166,9 +181,7 @@ div {
 
 
 #recente {
-    position: absolute;
     width: 100vw;
-    bottom: 25%;
     margin-left: 48px;
 }
 
@@ -187,7 +200,7 @@ div {
     height: 400px;
     background: #666666;
     padding: 10px;
-    margin-left: 148px;
+    margin-left: 100px;
     border-radius: 12px;
     text-align: center;
     overflow: hidden;
@@ -223,15 +236,12 @@ div {
     scale: 1.005;
 }
 
-.horizontal-ativo {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .horizontal-card {
-    width: 200px;
+    scale: 0.7;
 }
-
+.horizontal-card:hover {
+    scale: 0.75;
+}
 
 #add-midia-header {
     display: flex;
