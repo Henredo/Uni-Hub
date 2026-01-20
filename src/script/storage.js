@@ -37,7 +37,7 @@ export function adicionarMidia(midia) {
         return { success: false, message: "URL inválida ou maliciosa!" };
     }
 
-    lista.push(midia);
+    lista.unshift(midia);
     salvarMidias(lista);
 
     return { success: true, message: "Mídia adicionada com sucesso!" };

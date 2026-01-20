@@ -89,6 +89,21 @@ div {
     filter: invert();
 }
 
+.horizontal-ativo {
+    position: absolute;
+    margin-top: 1vh;
+    & .midias-scroller {
+        position: relative;
+        bottom: 100px;
+        width: 100vw;
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 255px 255px 255px 255px 255px;
+        grid-template-rows: 315px 315px;
+        overflow: scroll;
+    }
+}
+
 .barra-pesquisa {
     background: none;
     border: none;
@@ -193,10 +208,9 @@ div {
 
 
 #recente {
-    position: absolute;
     width: 100vw;
-    bottom: 25%;
     margin-left: 48px;
+    margin-top: 10vh;
 }
 
 .midias-scroller {
@@ -214,7 +228,7 @@ div {
     height: 400px;
     background: #000000;
     padding: 10px;
-    margin-left: 148px;
+    margin-left: 80px;
     border-radius: 12px;
     text-align: center;
     overflow: hidden;
@@ -233,7 +247,7 @@ div {
         left: 136px;
         height: 40px;
         width: 40px;
-        background-color: #999999;
+        background-color: #3a3a3a;
         border: none;
         border-radius: 4px;
         & .icon-remover {
@@ -251,13 +265,11 @@ div {
     scale: 1.005;
 }
 
-.horizontal-ativo {
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .horizontal-card {
-    width: 200px;
+    scale: 0.7;
+}
+.horizontal-card:hover {
+    scale: 0.75;
 }
 
 
