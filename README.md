@@ -2,6 +2,9 @@
 <h3><strong>Uma aplicação em site que objetiva permitir que você salve e acesse com facilidade seus pedaços de mídia favoritos</strong></h3>
 Com uma interface interativa e com muita customização, o Uni-Hub pode te ajudar a se manter proximo e atualizado das suas mídias na web favoritas! Sejam elas Jogos de flash, Quadrinhos e até Séries!
 <br>
+<h2>Utilize facilmente!</h2>
+acesse <a href="https://henredo.github.io/Uni-Hub/" target="_blank"><strong>henredo.github.io/Uni-Hub/</strong></a> e teste ja!
+<br>
 <h2>Feito com :</h2>
 <div align="left">
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" width="52" alt="html5 logo"  />
