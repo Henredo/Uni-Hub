@@ -1,4 +1,4 @@
-import { carregarMidias, removerMidia } from "./storage.js";
+import { carregarMidias, removerMidia , salvarMidias} from "./storage.js";
 
 /* ============================
    MENU LATERAL
@@ -25,6 +25,7 @@ document.querySelector("#menu-inicio")?.addEventListener("click", () => {
    ÁREA DOS CARDS
 ============================ */
 const container = document.querySelector("#midias-scroller");
+const container_container = document.querySelector("#recente");
 
 let modoHorizontal = false;
 let filtroAtual = "all";
@@ -36,9 +37,9 @@ document.querySelector("#menu-biblioteca")?.addEventListener("click", () => {
     modoHorizontal = !modoHorizontal;
 
     if (modoHorizontal) {
-        container.classList.add("horizontal-ativo");
+        container_container.classList.add("horizontal-ativo");
     } else {
-        container.classList.remove("horizontal-ativo");
+        container_container.classList.remove("horizontal-ativo");
     }
 
     carregarCards();
@@ -151,8 +152,14 @@ function criarCard(midia) {
     `;
 
     card.querySelector(".midia-img")?.addEventListener("click", () => {
-        if (midia.url) window.open(midia.url, "_blank");
-    });
+    const lista = carregarMidias();
+    const listaFiltrada = lista.filter(item => item.id !== midia.id);
+    listaFiltrada.unshift(midia);
+    salvarMidias(listaFiltrada);
+    carregarCards();
+    
+    if (midia.url) window.open(midia.url, "_blank");
+});
 
     return card;
 }
